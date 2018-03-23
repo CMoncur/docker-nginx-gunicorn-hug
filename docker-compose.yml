@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  api:
+    build: .
+    command: hug -f app.py # TODO: Update to use wsgi
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000" # TODO: Update when updated to wsgi
