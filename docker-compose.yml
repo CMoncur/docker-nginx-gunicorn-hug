@@ -3,6 +3,10 @@ version: "3"
 services:
   api:
     build: .
-    command: hug -f api/__main__.py # TODO: Update to use wsgi
+    # NOTE: Use this for a dev environment
+    # command: hug -f api/__main__.py
+    # NOTE: Use this for gunicorn
+    # command: gunicorn --reload --bind=0.0.0.0:8000 api.__main__:__hug_wsgi__
+    command: uwsgi --ini uwsgi.ini
     ports:
-      - "8000:8000" # TODO: Update when updated to wsgi
+      - "8000:8000"
