@@ -4,7 +4,7 @@
 import hug
 
 
-@hug.get("/")
+@hug.get("/", output=hug.output_format.html)
 def base():
     return "<h1>hello world</h1>"
 

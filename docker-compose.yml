@@ -3,7 +3,7 @@ version: "3"
 services:
   api:
     build: .
-    command: hug -f app.py # TODO: Update to use wsgi
+    command: hug -f api/__main__.py # TODO: Update to use wsgi
     volumes:
       - .:/code
     ports:
