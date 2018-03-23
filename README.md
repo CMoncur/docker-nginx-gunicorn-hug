@@ -1,6 +1,6 @@
-# docker-gunicorn-hug
+# docker-uwsgi-hug
 
-Boilerplate for a docker image containing Docker, uWSGI, and Hug
+Boilerplate for a Docker image containing a Python project utilizing uWSGI and Hug
 
 ## Getting started
 
