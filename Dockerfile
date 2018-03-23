@@ -14,4 +14,4 @@ RUN apt-get update && \
     pip3 install uwsgi
 
 # Run setup.py
-RUN python3 setup.py develop
+RUN python3 setup.py install
