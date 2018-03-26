@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  api:
+    build: .
+    command: hug -f api/__main__.py
+    expose:
+      - "8000"
+
+  nginx:
+    depends_on:
+      - api
+    image: nginx:latest
+    ports:
+      - "8000:80"
+    volumes:
+      - ./api:/app
+      - ./config/nginx:/etc/nginx/conf.d
