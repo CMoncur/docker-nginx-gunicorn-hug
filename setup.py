@@ -26,9 +26,7 @@ setup(
 
     # Core Dependencies
     install_requires = [
-        "hug",
-        "psycopg2",
-        "sqlalchemy"
+        "hug"
     ],
 
     # Dev/Test Dependencies
