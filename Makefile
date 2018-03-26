@@ -1,3 +1,5 @@
-dev: docker-compose up --build -f docker-compose.dev.yml
+dev:
+	docker-compose up --build -f docker-compose.dev.yml
 
-prod: docker-compose up --build
+prod:
+	docker-compose up --build
