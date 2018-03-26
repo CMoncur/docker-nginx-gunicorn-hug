@@ -6,7 +6,19 @@ services:
     # NOTE: Use this for a dev environment
     # command: hug -f api/__main__.py
     # NOTE: Use this for gunicorn
-    # command: gunicorn --reload --bind=0.0.0.0:8000 api.__main__:__hug_wsgi__
-    command: uwsgi --ini uwsgi.ini
+    command: gunicorn --reload --bind=0.0.0.0:8000 api.__main__:__hug_wsgi__
+    expose:
+      - "8000"
+    # command: uwsgi --ini uwsgi.ini
+    # ports:
+    #   - "8000:8000"
+
+  nginx:
+    depends_on:
+      - api
+    image: nginx:latest
     ports:
-      - "8000:8000"
+      - "8000:80"
+    volumes:
+      - ./api:/app
+      - ./config/nginx:/etc/nginx/conf.d
